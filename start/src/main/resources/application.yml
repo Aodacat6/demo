@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?charset=utf8mb4&serverTimezone=UTC
+    username: root
+    password: root
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+#  cache:
+#    cache-names: studentById
+#    type: caffeine
+#    caffeine:
+#      #refreshAfterWrite=10s need LoadingCache
+#      #spec: maximumSize=500,expireAfterWrite=10s,refreshAfterWrite=10s
+#      spec: maximumSize=500,expireAfterWrite=10s
