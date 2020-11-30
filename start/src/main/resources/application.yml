@@ -24,6 +24,10 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
 
+  data:
+    mongodb:
+      uri: mongodb://192.16.1.24:27017/test
+
 #  cache:
 #    cache-names: studentById
 #    type: caffeine
