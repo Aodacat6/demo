@@ -22,17 +22,17 @@ public class MongoTestService {
         template.save(classRoom);
     }
 
-    public ClassRoom findById (int id) {
+    public ClassRoom findById (Integer id) {
         return template.findById(id, ClassRoom.class);
     }
 
-    public void update (int id) {
+    public void update (Integer id) {
         ClassRoom classRoom = template.findById(id, ClassRoom.class);
         classRoom.setName(classRoom.getName() + "21");
         template.save(classRoom);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Integer id) {
         ClassRoom classRoom = template.findById(id, ClassRoom.class);
         template.remove(classRoom);
     }

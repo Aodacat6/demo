@@ -2,6 +2,7 @@ package com.example.mongodb.controller;
 
 import com.example.mongodb.entity.ClassRoom;
 import com.example.mongodb.service.MongoTestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,10 +20,11 @@ import javax.websocket.server.PathParam;
 @RequestMapping("/mongo")
 public class MongodbController {
 
+    @Autowired
     private MongoTestService service;
 
     @GetMapping("/add/{id}")
-    public String add(@PathParam("id") int id) {
+    public String add(@PathParam("id") Integer id) {
         ClassRoom classRoom = new ClassRoom();
         classRoom.setId(id);
         classRoom.setName("和利时");
@@ -31,19 +33,19 @@ public class MongodbController {
     }
 
     @GetMapping("/update/{id}")
-    public String update(@PathParam("id") int id) {
+    public String update(@PathParam("id") Integer id) {
         service.update(id);
         return "ok";
     }
 
     @GetMapping("/get/{id}")
-    public String get(@PathParam("id") int id) {
+    public String get(@PathParam("id") Integer id) {
         ClassRoom classRoom = service.findById(id);
         return classRoom.toString();
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathParam("id") int id) {
+    public String delete(@PathParam("id") Integer id) {
         service.deleteById(id);
         return "ok";
     }
