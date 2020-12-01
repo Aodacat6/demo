@@ -4,6 +4,7 @@ import com.example.mongodb.entity.ClassRoom;
 import com.example.mongodb.service.MongoTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class MongodbController {
     private MongoTestService service;
 
     @GetMapping("/add/{id}")
-    public String add(@PathParam("id") Integer id) {
+    public String add(@PathVariable("id") Integer id) {
         ClassRoom classRoom = new ClassRoom();
         classRoom.setId(id);
         classRoom.setName("和利时");
@@ -33,19 +34,19 @@ public class MongodbController {
     }
 
     @GetMapping("/update/{id}")
-    public String update(@PathParam("id") Integer id) {
+    public String update(@PathVariable("id") Integer id) {
         service.update(id);
         return "ok";
     }
 
     @GetMapping("/get/{id}")
-    public String get(@PathParam("id") Integer id) {
+    public String get(@PathVariable("id") Integer id) {
         ClassRoom classRoom = service.findById(id);
         return classRoom.toString();
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathParam("id") Integer id) {
+    public String delete(@PathVariable("id") Integer id) {
         service.deleteById(id);
         return "ok";
     }
