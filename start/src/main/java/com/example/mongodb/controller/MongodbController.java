@@ -1,3 +1,4 @@
+/*
 package com.example.mongodb.controller;
 
 import com.example.mongodb.entity.ClassRoom;
@@ -10,13 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 
+*/
 /**
  * @author ：songdalin
  * @date ：2020-11-30 下午 06:10
  * @description：
  * @modified By：
  * @version: 1.0
- */
+ *//*
+
 @RestController
 @RequestMapping("/mongo")
 public class MongodbController {
@@ -51,3 +54,4 @@ public class MongodbController {
         return "ok";
     }
 }
+*/

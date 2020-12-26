@@ -1,3 +1,4 @@
+/*
 package com.example.mongodb.service;
 
 import com.example.mongodb.entity.ClassRoom;
@@ -5,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
+*/
 /**
  * @author ：songdalin
  * @date ：2020-11-28 下午 05:05
  * @description：
  * @modified By：
  * @version: 1.0
- */
+ *//*
+
 @Service
 public class MongoTestService {
 
@@ -39,3 +42,4 @@ public class MongoTestService {
 
 
 }
+*/
