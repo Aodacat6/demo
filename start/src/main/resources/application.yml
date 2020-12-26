@@ -24,9 +24,9 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
 
-  data:
-    mongodb:
-      uri: mongodb://192.16.1.24:27017/test
+#  data:
+#    mongodb:
+#      uri: mongodb://192.16.1.24:27017/test
 
 #  cache:
 #    cache-names: studentById
@@ -35,3 +35,15 @@ spring:
 #      #refreshAfterWrite=10s need LoadingCache
 #      #spec: maximumSize=500,expireAfterWrite=10s,refreshAfterWrite=10s
 #      spec: maximumSize=500,expireAfterWrite=10s
+
+xxl:
+  job:
+    admin:
+      address: http://127.0.0.1:18080/xxl-job-admin
+    executor:
+      appname: demo-test
+      ip:
+      port: 9999
+      logpath: /xxl-job-log
+      logretentiondays: 10
+    accessToken:
