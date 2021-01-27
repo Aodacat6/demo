@@ -15,14 +15,24 @@ public class VolatitleTest {
         Thread thread = new Thread(()->{
             for (int i = 0; i < 100; i++) {
                 a++;
-                System.out.println(a);
+                //System.out.println(a);
             }
         });
         thread.start();
         while (true) {
-            if (a == 100){
+/*            if (a == 100){
                 System.out.println("========");
                 System.exit(0);
+            }*/
+            if (a == 11) {
+                System.out.println(a);
+                System.exit(0);
+            }
+            if (a == 22) {
+                System.out.println(a);
+            }
+            if (a == 33) {
+                System.out.println(a);
             }
         }
     }
