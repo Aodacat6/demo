@@ -15,25 +15,29 @@ public class ProductModel {
      * volatile
      * synchronized
      */
+    static Object ob = new Object();
     static int a = 0;
 
-    static synchronized int adda(){
-        a++;
+
+    static int adda(){
+
+        synchronized(ob) {
+            a++;
+        }
         return a;
     }
 
     public static void main(String[] args){
 
-
         Thread thread1 = new Thread(()->{
             for (int i = 0; i < 100000; i++) {
-                adda();
+                int a = adda();
                 System.out.println("1======"+a);
             }
         });
         Thread thread2 = new Thread(()->{
             for (int i = 0; i < 100000; i++) {
-                adda();
+                int a = adda();
                 System.out.println("2======"+a);
             }
         });
